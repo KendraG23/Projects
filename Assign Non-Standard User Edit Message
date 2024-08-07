@@ -1,4 +1,18 @@
-	
+/* Summary
+* Purpose:  The SQL query is used in assigning user edit messages through batch process.  Assignment of user edit message is based on
+* the earliest enrolled, in major, course.
+* 
+* Tables: A: Student Personal Information Table used as BIND, B: Student Aid Attribute Table, C: Student FA Term Table,
+* [D: Student Fin Aid Edit Message Table, E: Class Table View Table, F: Class Table Student Enrolled View, G: Class Table Student Enrolled View,
+* H: Student Disbursement By Term, I: FA Item Type Table], J: Term Definition Table
+*
+* User is prompted to input Term :1 number and Term Start Date :2.
+* Course(s) must start on or after :2 
+* Only courses without a grade of W or WF and must be considered "In major"
+* Student account must have anticipated aid > 0 & no aid disbursed for :1
+*/
+
+
 SELECT DISTINCT B.AID_YEAR, A.EMPLID, A.NAME, C.STRM, B.PROCESSING_STATUS, B.SFA_REVIEW_STATUS, TO_CHAR(J.TERM_BEGIN_DT,'YYYY-MM-DD'), TO_CHAR(E.START_DT,'YYYY-MM-DD'), ':2', TO_DATE( TO_CHAR(E.START_DT,'YYYY-MM-DD'),'YYYY-MM-DD') + 21, TRUNC(TO_DATE( TO_CHAR(E.START_DT,'YYYY-MM-DD'),'YYYY-MM-DD') + 21, 'DAY'), TO_CHAR(SYSDATE,'YYYY-MM-DD'), TO_CHAR(SYSDATE,'YYYY-MM-DD')
   FROM PS_STDNT_AID_ATRBT B, PS_STDNT_FA_TERM C, PS_CLASS_TBL_SE_VW E, PS_SCCPU_STDNT_BND A, PS_TERM_TBL J
   WHERE ( B.INSTITUTION = 'SPJC1'
