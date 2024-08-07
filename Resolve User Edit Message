@@ -1,3 +1,19 @@
+/* Summary
+* Purpose:  The SQL query is used in updating user edit message, Msg Action status, to resolve.  Updating of user edit message is based on
+* the date query is ran and the earliest enrolled, in major, course.  Student accounts must also have undisbursed aid on file.   
+* 
+* Tables: A: Student Personal Information Table used as BIND, B: Student Aid Attribute Table, C: Student FA Term Table,
+* D: Student Fin Aid Edit Message Table, E: Class Table Student Enrolled View,   [F: Class Table Student Enrolled View],
+* J: Term Definition Table
+*
+* User is prompted to input Term :1 number and Term Start Date :2.
+* Course(s) must start on or after :2 
+* Only courses without a grade of W or WF and must be considered "In major"
+* Student account must have anticipated aid > 0 & no aid disbursed for :1
+* Qualified course must have a disbursement date (start date + 21 days) before or equal to the system date.
+*/
+
+
 SELECT DISTINCT B.AID_YEAR, A.EMPLID, A.NAME, C.STRM, B.PROCESSING_STATUS, B.SFA_REVIEW_STATUS, TO_CHAR(J.TERM_BEGIN_DT,'YYYY-MM-DD'), TO_CHAR(E.START_DT,'YYYY-MM-DD'), TO_DATE( TO_CHAR(E.START_DT,'YYYY-MM-DD'),'YYYY-MM-DD') + 21, TRUNC(TO_DATE( TO_CHAR(E.START_DT,'YYYY-MM-DD'),'YYYY-MM-DD') + 21, 'DAY'), D.EDIT_MSG_CD, TO_CHAR(CAST((D.FA_MSG_DTTIME) AS TIMESTAMP),'YYYY-MM-DD-HH24.MI.SS.FF'), D.FA_MSG_ACTION, TO_CHAR(SYSDATE,'YYYY-MM-DD'), TO_CHAR(SYSDATE,'YYYY-MM-DD'), TO_CHAR(SYSDATE,'YYYY-MM-DD')
   FROM PS_STDNT_AID_ATRBT B, PS_STDNT_FA_TERM C, PS_CLASS_TBL_SE_VW E, PS_SCCPU_STDNT_BND A, PS_TERM_TBL J, PS_STDNT_FA_MSGS D
   WHERE ( B.INSTITUTION = 'SPJC1'
