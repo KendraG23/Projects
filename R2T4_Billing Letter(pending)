@@ -1,3 +1,12 @@
+* Summary: This  query searches for Return to Title IV information, based on student ID.
+*
+* Purpose:  The query is used for staff members that do not have access to the Return To Title IV (R2T4) component screens.
+* In particular, on campus staff can use this query to better serve students that are in question about R2T4.
+*
+* Function:  User is prompted to enter Aid Year, Term, and Student ID to retrieve data for the specific record.  This is
+* critical information as a student can have multiple records, within a school year, for R2T4 purposes.
+
+
 SELECT A.AID_YEAR, A.EMPLID, B.DESCR, A.STRM, A.TOTAL_TIV_DISB_ALL, A.TOT_AMT_SCHL_OWE, A.SCHL_RTN_WK_5, A.SCHL_RTN_WK_6, FLOOR( A.SCHL_RTN_WK_1), FLOOR( A.SCHL_RTN_WK_2), FLOOR( A.SCHL_RTN_WK_4), SUM( A.SCHL_RTN_WK_5+
 A.SCHL_RTN_WK_6+
 FLOOR( A.SCHL_RTN_WK_1)+
