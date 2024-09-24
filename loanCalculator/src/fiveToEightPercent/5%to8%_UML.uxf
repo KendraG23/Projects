@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>50</y>
+      <w>330</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Stereotype&gt;&gt;
+Package::FiveToEight
+{Some Properties}
+--
+-loanAmount: double
+-numberOfYears: int
+--
++Loan(numberOfYears: int, loanAmount: double)
+-calcMonthlyPymt()
+-calcYearlyPymt()
+-displayResults()</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
