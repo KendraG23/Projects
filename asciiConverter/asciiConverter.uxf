@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>190</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;asciiConverter&gt;&gt;
+Package::intToChar
+{Some Properties}
+--
+- int asciiCode 
+--
++ AsciiConverter(int asciiCode)
+
+--
+Responsibilities
+- isInputValid (boolean asciiCode)
+- convertAndPrint ()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>80</x>
+      <y>40</y>
+      <w>410</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>Note..
+This program will request a user input ranging from
+0 to 127.  Based on input the program will make sure
+the input is valid and convert integer to equivalent
+character.  If input is invalid user will be informed
+and must create a new object.
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
