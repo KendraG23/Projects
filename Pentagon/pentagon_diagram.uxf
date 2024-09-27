@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>220</y>
+      <w>260</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Pentagon&gt;&gt;
+Package::Pentagon
+{Properties}
+--
+- radius: double
+--
+Constructors:
++ Pentagon()
++ Pentagon(newRadius: double)
+--
+Behaviors:
++ getSide(): double
++ getArea(): double
++ setRadius(newRadius: double) void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>70</x>
+      <y>510</y>
+      <w>210</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>_object: pentagon1
+--
+radius: double 5.5
+[The area of pentagon is 71.92]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>170</x>
+      <y>430</y>
+      <w>110</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>70</x>
+      <y>0</y>
+      <w>500</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Note..
+1. Create an object of Pentagon that will accept a radius parameter
+2. Convert radius to a side length and return its value
+3. Calculate area with radius and new calculated side
+4. Print out the area of the pentagon
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
